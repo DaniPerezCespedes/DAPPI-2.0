@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>List of Employees</h1>
-    <a class ="btn btn-primary" href="/DAPPI/create.php" role="button">Create a new employee</a>
+    <a class ="btn btn-primary" href="/DAPPI 2.0/create.php" role="button">Create a new employee</a>
     <br>
     <br>
     <h2>List of Current Employees</h2>

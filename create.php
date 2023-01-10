@@ -57,7 +57,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 
         $successMessage ="Employee added correctly";
         //redirect user to main page
-       // header("location:/DAPPI/index.php");
+       // header("location:/DAPPI 2.0/index.php");
         //exit;
 
     } while(false);
@@ -118,7 +118,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
         <br>
         <br>
         <button type="submit" class = #btn btn-primary">Submit</button>
-        <a class="btn btn-outline-primary" href="/DAPPI/index.php" role="button">Cancel</a>
+        <a class="btn btn-outline-primary" href="/DAPPI 2.0/index.php" role="button">Cancel</a>
     </form>
     </body>
 </html>
