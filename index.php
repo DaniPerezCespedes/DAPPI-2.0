@@ -56,14 +56,14 @@
             // read data of each row
             while($row = mysqli_fetch_assoc($result)){
                 echo "<tr>
-                <td>" .$row["id"]. "</td>
-                <td>" .$row["first_name"]. "</td>
-                <td>" .$row["last_name"]. "</td>
-                <td>" .$row["email"]. "</td>
-                <td>" .$row["phone"]. "</td>
-                <td>" .$row["address"]. "</td>
+                <td>$row[id]</td>
+                <td>$row[first_name]</td>
+                <td>$row[last_name]</td>
+                <td>$row[email]</td>
+                <td>$row[phone]</td>
+                <td>$row[address]</td>
                 <td>
-                <a class ='btn btn-primary btn-sm' href='/DAPPI 2.0/edit.php'>Edit</a>
+                <a class ='btn btn-primary btn-sm' href='/DAPPI 2.0/edit.php?id=$row[id]'>Edit</a>
                 </td>
                 </tr>";
             }

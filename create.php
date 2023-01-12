@@ -16,7 +16,6 @@ $email ="";
 $phone ="";
 $address="";
 $errorMessage="";
-$errorMessage2="";
 $successMessage="";
 
 //obtain the information filled by user in webpage
@@ -44,7 +43,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
          //check if query is correct or not
 
         if(!$result){
-           $errorMessage2 = "Invalid query: ". $connection ->error;
+           $errorMessage = "Invalid query: ". $connection ->error;
            break; //break the while loop
         }
 
