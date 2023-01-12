@@ -62,6 +62,9 @@
                 <td>" .$row["email"]. "</td>
                 <td>" .$row["phone"]. "</td>
                 <td>" .$row["address"]. "</td>
+                <td>
+                <a class ='btn btn-primary btn-sm' href='/DAPPI 2.0/edit.php'>Edit</a>
+                </td>
                 </tr>";
             }
             ?>
