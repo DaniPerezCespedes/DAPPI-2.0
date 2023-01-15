@@ -69,7 +69,8 @@ if($_SERVER['REQUEST_METHOD']=='POST')
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAPPI</title>
+    <title>Create new employee</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/> 
 </head>
 <body>
     <h2>New Employee</h2>
@@ -116,7 +117,8 @@ if($_SERVER['REQUEST_METHOD']=='POST')
         ?>
         <br>
         <br>
-        <button type="submit" class = #btn btn-primary">Submit</button>
+        <button type="submit" class = #btn btn-primary" id="log">Submit</button>
+        <br>
         <a class="btn btn-outline-primary" href="/DAPPI 2.0/index.php" role="button">Cancel</a>
     </form>
     </body>
