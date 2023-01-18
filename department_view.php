@@ -54,7 +54,7 @@
 
             //read all row from database table
             
-            $sql = "SELECT * FROM requests, items WHERE items.department_responsible = 2";
+            $sql = "SELECT DISTINCT requests.id, requests.date_request, requests.item, requests.room, requests.problem_category, requests.description, requests.image, requests.status, requests.response_message, requests.solution_category, requests.expected_SLA_days, requests.date_response, requests.date_fulfillment, requests.actual_SLA_days FROM requests INNER JOIN items ON requests.item = items.name WHERE items.department_responsible = 2 ";
             $result = $connection->query($sql);
 
             //check if query is correct or not
