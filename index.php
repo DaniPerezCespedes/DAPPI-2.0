@@ -4,14 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Main page</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/> 
 </head>
 <body>
-    <h1>List of Employees</h1>
-    <a class ="btn btn-primary" href="/DAPPI 2.0/create.php" role="button">Create a new employee</a>
-    <br>
+<img src="Logo DAPPI.JPG" 
+        alt="logo" 
+        width="100" 
+        height="50"
+        style="float: right"
+        margin-right="50"
+        />    
+<h1>Employees</h1>
+    <a class ="btn btn-primary" href="/DAPPI 2.0/create.php">
+    <button type="submit" class = #btn btn-primary" id="log">Create new employee</button>
+    </a>
     <br>
     <h2>List of Current Employees</h2>
+    <div id="main-container">
     <table class = "table">
         <thead>
             <tr>
@@ -63,12 +73,16 @@
                 <td>$row[phone]</td>
                 <td>$row[address]</td>
                 <td>
-                <a class ='btn btn-primary btn-sm' href='/DAPPI 2.0/edit.php?id=$row[id]'>Edit</a>
+                <a class ='btn btn-primary' href='/DAPPI 2.0/edit.php?id=$row[id]'>
+                <button type='submit' class = 'btn btn-primary' id='edit'>Edit</button>
+                </a>
+                <!-- <a class ='btn btn-primary btn-sm' href='/DAPPI 2.0/edit.php?id=$row[id]'>Edit</a> -->
                 </td>
                 </tr>";
             }
             ?>
             </tbody>
-</table>
+        </table>
+        </div>
 </body>
 </html>
