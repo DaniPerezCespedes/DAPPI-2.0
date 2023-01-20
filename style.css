@@ -24,8 +24,8 @@ h1{
 } 
 h2{  
     text-align: left;  
-    color: #009668;  
-    padding: 20px;  
+    color: gray;
+    padding: 20px;
 } 
 label{  
     color: #ff9900ff;  
@@ -77,11 +77,11 @@ a{
 
 /* para tabla */
 #main-container{
-    margin: 100 px;
-    width: 200 px;
+    margin: 400 px;
+    width: 400 px;
 }
 table{
-    width:80%;
+    width:95%;
     text-align: left;
     column-rule: 2px grey;
 }
