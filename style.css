@@ -11,12 +11,23 @@ body
         width: 400px;  
         overflow: hidden;  
         margin: auto;  
-        margin: 20 0 0 450px;  
+        margin: 20 0 0 20px;  
         padding: 20px;  
         background: #23463f;  
         border-radius: 15px ;  
           
 }  
+.request{  
+    width: 600px;  
+    overflow: hidden;  
+    margin: left;
+    margin: 20 0 0 450px;  
+    padding: 20px;
+    background: #23463f;  
+    border-radius: 15px ;
+    /*position: left;*/
+      
+}
 h1{  
     text-align: center;  
     color: #009668;  
@@ -29,7 +40,8 @@ h2{
 } 
 label{  
     color: #ff9900ff;  
-    font-size: 17px;  
+    font-size: 17px;
+    FONT-WEIGHT: bold;
 }  
 #Uname{  
     width: 300px;  
@@ -91,3 +103,15 @@ thead{
  color: white;
  text-align: center;   
 }
+.alert{  
+    width: 400px;  
+    overflow: hidden;  
+    margin: left;  
+    margin: 20 0 0 20px;  
+    padding: 10px;  
+    background: rgba(253, 146, 146, 0.363);  
+    border-radius: 5px ;  
+    color: rgb(160, 25, 25);
+    font-weight: bold;
+      
+} 
