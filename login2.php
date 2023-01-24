@@ -34,7 +34,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             header("Location: department_view.php");
             exit();
         } else if ($user_type == "USER") {
-            header("Location: request.php");
+            header("Location: user_view.php");
             exit();
         } else {
             echo "Invalid user type.";

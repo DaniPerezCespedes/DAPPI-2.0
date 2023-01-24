@@ -6,20 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DAPPI-My Requests</title>
-    <link rel="stylesheet" type="text/css" href="style.css"/> 
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
 <body>
-<img src="Logo DAPPI.JPG" 
-        alt="logo" 
-        width="100" 
-        height="50"
-        style="float: right"
-        margin-right="50"
-        />  
+    <img src="Logo DAPPI.JPG" alt="logo" width="100" height="50" style="float: right" margin-right="50" />
     <h2>My Requests</h2>
-    <a class ="btn btn-primary" href="/DAPPI 2.0/create_req.php">
-    <button type="submit" class = "btn btn-primary" id="log">New Request</button>
+    <a class="btn btn-primary" href="/DAPPI 2.0/create_req.php">
+        <button type="submit" class="btn btn-primary" id="log">New Request</button>
     </a>
     <br>
     <br>
@@ -41,10 +35,11 @@
                 <th>Date of fulfillment</th>
                 <th>Actual SLA (Days)</th>
             </tr>
-            <t /head>
+        </thead>
 
         <tbody>
             <?php
+            session_start();
             //Define variables for connection
             
             $servername = "localhost";
@@ -64,7 +59,7 @@
             //read all row from database table
             //NEED TO ADD A COLUMN WITH USER
             
-            $sql = "SELECT * FROM requests";
+            $sql = "SELECT * FROM requests WHERE requests.user_id = $_SESSION[id]";
             $result = $connection->query($sql);
 
             //check if query is correct or not
