@@ -32,13 +32,13 @@ if($_SERVER['REQUEST_METHOD']=='POST')
     do{
         if (empty($item) || empty($room)||empty($problem))
         {
-            $errorMessage ="Please fill all fields required";
+            $errorMessage ="Please fill all fields required (*)";
         break;
         }
-        //add a new employee from the for, to the table "employees"
+        //add a new request from the for, to the table "request"
 
         $sql="INSERT INTO requests (item,room,problem_category,description,image)
-                VALUES ('$item','$room','$problem','$description', '$image')";
+                VALUES ('$item','$room','$problem','$description','$image')";
         $result = $connection -> query($sql);
 
          //check if query is correct or not
@@ -83,14 +83,14 @@ if($_SERVER['REQUEST_METHOD']=='POST')
     //check if error message is not empy. If not empty, show error message
     if (!empty($errorMessage)){
         echo "
-        <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+        <div class='alert' role='alert'>
             <strong>$errorMessage</strong>
         </div>
         ";
     }
     ?>
     <br>
-    <table>
+    <table class="request">
     <form method="post">
         <tr>
         <td><label>Item that shows problem*</label></td>
@@ -111,7 +111,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
         $select_room='SELECT * FROM rooms';
         $result = $connection->query($select_room);
   
-        echo "<select name='item'>";
+        echo "<select name='room'>";
         echo "<option value='0'>Select</option>";
         while($row = mysqli_fetch_assoc($result)){
             echo "<option value='".$row['id']."'>".$row['room']."</option>";
@@ -124,7 +124,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
         $select_problem='SELECT * FROM problem_category';
         $result = $connection->query($select_problem);
   
-        echo "<select name='item'>";
+        echo "<select name='problem_category'>";
         echo "<option value='0'>Select</option>";
         while($row = mysqli_fetch_assoc($result)){
             echo "<option value='".$row['id']."'>".$row['problem_category']."</option>";
@@ -137,20 +137,19 @@ if($_SERVER['REQUEST_METHOD']=='POST')
         <tr>
         <td><label>Image</label></td>
         <td><input type ="text" class="form-control" name="image" value="<?php echo $image;?>"></td>   
+        <tr>
+        <td><td><br><button type="submit" class = #btn btn-primary" id="log">Submit</button></br></td></td> 
 </table>  
-        <!- check if success message is not empty, if is not, display success message->
+        <!-- check if success message is not empty, if is not, display success message-->
         <?php
     if (!empty($successMessage)){
-        echo "
-        <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+        echo "<div class='alert' role='alert'>
             <strong>$successMessage</strong>
         </div>
         ";
     }
         ?>
         <br>
-        <br>
-        <button type="submit" class = #btn btn-primary" id="log">Submit</button>
         <br>
         <br>
         <a class="btn btn-outline-primary" href="/DAPPI 2.0/user_view.php" role="button">Go back to My Requests</a>
