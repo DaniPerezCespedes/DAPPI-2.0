@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 //Define variables for Connection
 $servername = "localhost";
 $username = "root";
@@ -35,8 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         //add a new request from the for, to the table "request"
 
-        $sql = "INSERT INTO requests (item, room, problem_category, description, image)
-                VALUES ('$item','$room','$problem','$description','$image')";
+        $sql = "INSERT INTO requests (user_id, item, room, problem_category, description, image)
+                VALUES ($_SESSION[id], '$item','$room','$problem','$description','$image')";
         $result = $connection->query($sql);
 
         //check if query is correct or not
@@ -127,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     echo "<select name='problem_category'>";
                     echo "<option value='0'>Select</option>";
                     while ($row = mysqli_fetch_assoc($result)) {
-                        echo "<option value='" . $row['id'] . "'>" . $row['problem_category'] . "</option>";
+                        echo "<option value='" . $row['problem_category'] . "'>" . $row['problem_category'] . "</option>";
                     }
                     echo "</select>";
                     ?>
