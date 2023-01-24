@@ -35,7 +35,7 @@
                 <th>Date of fulfillment</th>
                 <th>Actual SLA (Days)</th>
             </tr>
-            <t /head>
+        </thead>
 
         <tbody>
             <?php
