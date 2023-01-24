@@ -100,7 +100,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
         echo "<select name='item'>";
         echo "<option value='0'>Select</option>";
         while($row = mysqli_fetch_assoc($result)){
-            echo "<option value='".$row['item_id']."'>".$row['name']."</option>";
+            echo "<option value='".$row['name']."'>".$row['name']."</option>";
         }
         echo "</select>";
         ?></td>
@@ -113,7 +113,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
         echo "<select name='room'>";
         echo "<option value='0'>Select</option>";
         while($row = mysqli_fetch_assoc($result)){
-            echo "<option value='".$row['id']."'>".$row['room']."</option>";
+            echo "<option value='".$row['room']."'>".$row['room']."</option>";
         }
         echo "</select>";
         ?></td>
@@ -126,7 +126,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
         echo "<select name='problem_category'>";
         echo "<option value='0'>Select</option>";
         while($row = mysqli_fetch_assoc($result)){
-            echo "<option value='".$row['id']."'>".$row['problem_category']."</option>";
+            echo "<option value='".$row['problem_category']."'>".$row['problem_category']."</option>";
         }
         echo "</select>";
         ?></td>  
