@@ -136,8 +136,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </td>
             <tr>
                 <td><label>Description</label></td>
-                <td><input type="text" class="form-control" name="description" value="<?php echo $description; ?>">
-                </td>
+                <td><input type="text" class="form-control" name="description" value="<?php echo $description; ?>"> </td>
             <tr>
                 <td><label>Image</label></td>
                 <td><input type="text" class="form-control" name="image" value="<?php echo $image; ?>"></td>
