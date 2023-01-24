@@ -37,7 +37,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
         }
         //add a new request from the for, to the table "request"
 
-        $sql="INSERT INTO requests (item,room,problem_category,description,image)
+        $sql="INSERT INTO requests (item, room, problem_category, description, image)
                 VALUES ('$item','$room','$problem','$description','$image')";
         $result = $connection -> query($sql);
 
@@ -47,7 +47,6 @@ if($_SERVER['REQUEST_METHOD']=='POST')
            $errorMessage = "Invalid query: ". $connection ->error;
            break; //break the while loop
         }
-
 
         $item ="";
         $room ="";
