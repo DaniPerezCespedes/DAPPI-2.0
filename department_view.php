@@ -46,7 +46,7 @@
 
             //read all row from database table
             
-            $sql = "SELECT DISTINCT * FROM requests INNER JOIN items ON requests.item = items.name WHERE items.department_responsible = $_SESSION[department] ";
+            $sql = "SELECT DISTINCT * FROM requests INNER JOIN items ON requests.item = items.name WHERE items.department_responsible = $_SESSION[department] ORDER BY requests.date_request DESC";
             $result = $connection->query($sql);
 
             //check if query is correct or not

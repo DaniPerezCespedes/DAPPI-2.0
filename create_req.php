@@ -52,6 +52,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $description = "";
         $successMessage = "Request added correctly";
 
+        header("location:/DAPPI 2.0/user_view.php");
+        exit();
+
     } while (false);
 }
 ?>

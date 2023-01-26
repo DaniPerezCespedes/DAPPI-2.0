@@ -46,7 +46,7 @@
 
             //read all row from database table
             
-            $sql = "SELECT DISTINCT * FROM requests";
+            $sql = "SELECT DISTINCT * FROM requests ORDER BY requests.date_request DESC";
             $result = $connection->query($sql);
 
             //check if query is correct or not
@@ -70,9 +70,6 @@
                 <td>$row[solution]</td>
                 <td>$row[expected_SLA_days]</td>
                 <td>$row[date_response]</td>
-                <td>
-                <a class ='btn btn-primary btn-sm' href='/DAPPI 2.0/edit.php?id=$row[id]'>Edit</a>
-                </td>
                 </tr>";
             }
             ?>

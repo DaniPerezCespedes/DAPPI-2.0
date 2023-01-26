@@ -12,9 +12,12 @@
 <body>
     <img src="Logo DAPPI.JPG" alt="logo" width="100" height="50" style="float: right" margin-right="50" />
     <h2>My Requests</h2>
+    <br>
+    <br>
     <a class="btn btn-primary" href="/DAPPI 2.0/create_req.php">
         <button type="submit" class="btn btn-primary" id="log">New Request</button>
     </a>
+    <br>
     <br>
     <br>
     <br>
@@ -57,7 +60,7 @@
             //read all row from database table
             //NEED TO ADD A COLUMN WITH USER
             
-            $sql = "SELECT * FROM requests WHERE requests.user_id = $_SESSION[id]";
+            $sql = "SELECT * FROM requests WHERE requests.user_id = $_SESSION[id] ORDER BY requests.date_request DESC";
             $result = $connection->query($sql);
 
             //check if query is correct or not

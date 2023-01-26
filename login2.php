@@ -59,7 +59,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 <body>
     <br>
     <img src="Logo DAPPI.JPG" alt="logo" width="100" height="50" style="float: right" margin-right="50" />
-    <h1>Solutions for managing Assets and Supplies</h1>
+    <h1>Solutions for Managing Assets and Supplies</h1>
     <br>
     <section class="info">
     <p>DAPPI is a ticketing system that will allow you to do the following: <br>
