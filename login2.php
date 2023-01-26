@@ -37,11 +37,11 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             header("Location: user_view.php");
             exit();
         } else {
-            echo "Invalid user type.";
+            echo "Invalid user type";
         }
     } else {
         // Display an error message
-        echo "Invalid username or password.";
+        echo "<div class='alert' role='alert'>Invalid username or password</div>";
     }
     // Close the connection
     mysqli_close($con);
@@ -64,7 +64,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     <table>
         <tr>
             <td>
-            <img src="DAPPI diagram.JPG" alt="logo" width="650" height="350" style="float: left" margin-right="200" />  
+            <img src="DAPPI diagram.JPG" alt="logo" width="680" height="350" style="float: left" margin-right="200" />  
                 <!--
     <p>DAPPI is a ticketing system that will allow you to do the following: <br>
     <ul>

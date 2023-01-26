@@ -153,7 +153,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <br>
     <br>
     <br>
-    <a class="btn btn-outline-primary" href="/DAPPI 2.0/user_view.php" role="button">Go back to My Requests</a>
+    <a id="cancel" style="margin: 30px;" class="btn btn-outline-primary" href="/DAPPI 2.0/user_view.php"
+        role="button">Cancel</a>
     </form>
 </body>
 
