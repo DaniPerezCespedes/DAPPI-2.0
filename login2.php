@@ -59,9 +59,13 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 <body>
     <br>
     <img src="Logo DAPPI.JPG" alt="logo" width="100" height="50" style="float: right" margin-right="50" />
-    <h1>Solutions for Managing Assets and Supplies</h1>
+    <h1>Solutions for managing Assets and Supplies</h1>
     <br>
-    <section class="info">
+    <table>
+        <tr>
+            <td>
+            <img src="DAPPI diagram.JPG" alt="logo" width="650" height="350" style="float: left" margin-right="200" />  
+                <!--
     <p>DAPPI is a ticketing system that will allow you to do the following: <br>
     <ul>
         <li>Report issues in an fast and easy way</li>
@@ -71,22 +75,33 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         <li>Generation of database for future analysis </li>
     </ul>
     </p>
-    </section>
-    <aside class="login">
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" required>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" required>
-        <br>
-        <input type="submit" value="Login">
-        <input type="checkbox" id="check">
-        <span>Remember me</span>
-        <br><br>
-        <a href="#">Forgot Password</a>
+    -->
+    </td>
+    <td>
+    <table class="login">
+    <tr>
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <td><label for="username">Username:</label></td>
+        <td><input type="text" name="username" id="username" required></td>
+        </tr>
+        <tr>
+        <td><label for="password">Password:</label></td>
+        <td><input type="password" name="password" id="password" required></td>
+        </tr>
+        <tr></tr>
+        <tr>
+        <td><input type="submit" value="Login" id="log"></td>
+        </tr>
+        <tr>
+        <td><input type="checkbox" id="check"><span>Remember me</span></td>
+        </tr>
+        <tr>
+        <td><a href="#">Forgot Password</a></td>
+        </tr>
     </form>
-    </aside>
+</td>
+</tr>
+</table>
 </body>
 
 </html>

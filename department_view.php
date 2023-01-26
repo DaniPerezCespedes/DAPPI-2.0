@@ -10,9 +10,6 @@
 </head>
 
 <body>
-    <h1>Requests</h1>
-    <br>
-    <br>
     <h2>List of Requests</h2>
     <table class="table">
         <thead>
