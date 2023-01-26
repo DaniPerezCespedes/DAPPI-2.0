@@ -58,8 +58,26 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
 <body>
     <br>
-    <img src="Logo DAPPI.JPG" alt="logo" width="100" height="50" style="float: right" margin-right="50" />
-    <h1>Solutions for managing Assets and Supplies</h1>
+    <img src="Logo DAPPI 2.PNG" alt="logo" width="100" height="50" style="float: right" margin-right="50" />
+    <h1>Solutions for Managing Assets and Supplies</h1>
+    <h4>
+    <table>
+    <tr>
+        <td><a href="#">About us</a></td>
+        <td></td>
+        <td><a href="#">Terms and coditions</a></td>
+        <td></td>
+        <td><a href="#">Support</a></td>
+        <td></td>
+        <td><a href="#">Contact</a></td>
+        <td></td>
+        <td><a href="#">Carriers</a></td>
+        <td></td>
+        <td><a href="#">Social Media</a></td>
+        <td></td>
+    </tr>
+    </table>
+    </h4>
     <br>
     <table>
         <tr>
@@ -88,12 +106,24 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         <td><label for="password">Password:</label></td>
         <td><input type="password" name="password" id="password" required></td>
         </tr>
-        <tr></tr>
         <tr>
-        <td><input type="submit" value="Login" id="log"></td>
+            <td></td>
         </tr>
         <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+        <td><input type="submit" value="Login" id="log2"></td>
         <td><input type="checkbox" id="check"><span>Remember me</span></td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
         </tr>
         <tr>
         <td><a href="#">Forgot Password</a></td>
@@ -102,6 +132,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 </td>
 </tr>
 </table>
+<br>
+<br>
 </body>
-
 </html>

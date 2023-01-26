@@ -10,6 +10,7 @@
 </head>
 
 <body>
+<img src="Logo DAPPI.JPG" alt="logo" width="100" height="50" style="float: right" margin-right="50" />
     <h2>List of Requests</h2>
     <table class="table">
         <thead>

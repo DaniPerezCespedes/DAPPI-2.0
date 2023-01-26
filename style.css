@@ -31,7 +31,8 @@ body
 h1{  
     text-align: center;  
     color: #009668;  
-    padding: 20px;  
+    padding: 20px;
+   /* background: #2c6156; */
 } 
 h2{  
     text-align: left;  
@@ -61,6 +62,16 @@ label{
 #log{  
     width: 200px;  
     height: 38px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px; 
+    background: #ff9900ff;
+    color:white;
+    font-weight: bold;
+  } 
+#log2{  
+    width: 100px;  
+    height: 20px;  
     border: none;  
     border-radius: 17px;  
     padding-left: 7px; 
@@ -97,7 +108,7 @@ span{
 }  
 a{  
     float: left;
-    color: rgb(58, 58, 197);   
+    color: #ff9900ff;   
 }  
 
 /* para tabla */

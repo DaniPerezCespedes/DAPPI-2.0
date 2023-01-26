@@ -110,6 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
+<img src="Logo DAPPI.JPG" alt="logo" width="100" height="50" style="float: right" margin-right="50" />
     <h2>Edit Request</h2>
     <?php
     //check if error message is not empy. If not empty, show error message
