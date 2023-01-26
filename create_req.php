@@ -17,7 +17,6 @@ $item = "";
 $room = "";
 $problem = "";
 $description = "";
-$image = "";
 $errorMessage = "";
 $successMessage = "";
 
@@ -28,7 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $room = $_POST["room"];
     $problem = $_POST["problem_category"];
     $description = $_POST["description"];
-    $image = $_POST["image"];
 
     do {
         if (empty($item) || empty($room) || empty($problem)) {
@@ -37,8 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         //add a new request from the for, to the table "request"
 
-        $sql = "INSERT INTO requests (user_id, item, room, problem_category, description, image)
-                VALUES ($_SESSION[id], '$item','$room','$problem','$description','$image')";
+        $sql = "INSERT INTO requests (user_id, item, room, problem_category, description)
+                VALUES ($_SESSION[id], '$item','$room','$problem','$description')";
         $result = $connection->query($sql);
 
         //check if query is correct or not
@@ -52,10 +50,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $room = "";
         $problem = "";
         $description = "";
-        $image = "";
-
-
-
         $successMessage = "Request added correctly";
 
     } while (false);
@@ -136,13 +130,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </td>
             <tr>
                 <td><label>Description</label></td>
-                <td><input type="text" class="form-control" name="description" value="<?php echo $description; ?>"> </td>
-            <tr>
-                <td><label>Image</label></td>
-                <td><input type="text" class="form-control" name="image" value="<?php echo $image; ?>"></td>
+                <td><input type="text" class="form-control" name="description" value="<?php echo $description; ?>">
+                </td>
+
             <tr>
                 <td>
-                <td><br><button type="submit" class=#btn btn-primary" id="log">Submit</button></br></td>
+                <td><br><button type="submit" class="btn btn-primary" id="log">Submit</button></br></td>
                 </td>
     </table>
     <!-- check if success message is not empty, if is not, display success message-->

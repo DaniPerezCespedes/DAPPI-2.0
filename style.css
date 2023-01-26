@@ -60,7 +60,7 @@ label{
 }  
 #log{  
     width: 200px;  
-    height: 30px;  
+    height: 38px;  
     border: none;  
     border-radius: 17px;  
     padding-left: 7px; 
@@ -68,8 +68,20 @@ label{
     color:white;
     font-weight: bold;
   }  
-
-  #edit{  
+#cancel{  
+    width: 200px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px; 
+    background: rgb(201, 27, 27);
+    color:white;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    padding-top:8px;
+  }  
+#edit{  
     width: 60px;  
     height: 20px;  
     border: none;  

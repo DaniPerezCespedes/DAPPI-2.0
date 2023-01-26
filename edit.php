@@ -18,14 +18,12 @@ $item = "";
 $room = "";
 $problem_category = "";
 $description = "";
-$image = "";
 $status = "";
 $response_message = "";
-$solution_category = "";
+$solution = "";
 $expected_SLA_days = "";
 $date_response = "";
-$date_fulfillment = "";
-$actual_SLA_days = "";
+$current_date = "";
 
 //check if we recieve the request by get method (show data of the request)
 
@@ -33,15 +31,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
     $id = $_GET['id']; //get ID from database
 
-
     //read the row of selected request from db table
     $sql = "SELECT * FROM requests WHERE id=$id";
     $result = $connection->query($sql);
     $row = mysqli_fetch_assoc($result);
 
     if (!$row) {
-        header("location:/DAPPI 2.0/index0.php");
-        exit;
+        header("location:/DAPPI 2.0/department_view.php");
+        exit();
     }
 
     //store info from db in these variables
@@ -52,59 +49,53 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $room = $row["room"];
     $problem_category = $row["problem_category"];
     $description = $row["description"];
-    $image = $row["image"];
     $status = $row["status"];
     $response_message = $row["response_message"];
-    $solution_category = $row["solution_category"];
+    $solution = $row["solution"];
     $expected_SLA_days = $row["expected_SLA_days"];
     $date_response = $row["date_response"];
-    $date_fulfillment = $row["date_fulfillment"];
-    $actual_SLA_days = $row["actual_SLA_days"];
+    $successMessage = "";
+    $current_date = date("Y-m-d H:i:s");
 } else {
     //POST method: update the data
     $id = $_POST["id"];
-    $user_id = $_POST["user_id"];
-    $date_request = $_POST["date_request"];
-    $item = $_POST["item"];
-    $room = $_POST["room"];
-    $problem_category = $_POST["problem_category"];
-    $description = $_POST["description"];
-    $image = $_POST["image"];
     $status = $_POST["status"];
     $response_message = $_POST["response_message"];
-    $solution_category = $_POST["solution_category"];
+    $solution = $_POST["solution"];
     $expected_SLA_days = $_POST["expected_SLA_days"];
-    $date_response = $_POST["date_response"];
-    $date_fulfillment = $_POST["date_fulfillment"];
-    $actual_SLA_days = $_POST["actual_SLA_days"];
 }
-do {
-    //check if there are no empy fields
-    if (empty($status) || empty($expected_SLA_days)) {
-        $errorMessage = "Please fill all fields required";
-        break;
-    }
-    $sql = "UPDATE requests  
-                SET status ='$status', response_message='$response_message',solution_category ='$solution_category',expected_SLA_days='$expected_SLA_days',date_response='$date_response',date_fulfillment='$date_fulfillment',actual_SLA_days='$actual_SLA_days'
-                WHERE id= $id";
-    $result = $connection->query($sql);
 
-    //check if query is correct or not
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    do {
+        //check if there are no empy fields
+        if (empty($status) || empty($expected_SLA_days)) {
+            $errorMessage = "Please fill all fields required";
+            break;
+        }
 
-    if (!$result) {
-        $errorMessage = "Invalid query: " . $connection->error;
-        break; //break the while loop
-    }
+        $current_date = date("Y-m-d H:i:s");
 
-    // $successMessage ="Employee edited correctly";
-    //redirect user to main page
-    // header("location:/DAPPI 2.0/index.php");
-    //exit;
+        $sql = "UPDATE requests  
+    SET status ='$status', response_message='$response_message',solution ='$solution',expected_SLA_days='$expected_SLA_days',date_response='$current_date'
+    WHERE id= $id";
+        $result = $connection->query($sql);
+
+        //check if query is correct or not
+
+        if (!$result) {
+            $errorMessage = "Invalid query: " . $connection->error;
+            break; //break the while loop
+        }
+
+        $successMessage = "Request edited successfully";
+        //redirect user to main page
+        header("location:/DAPPI 2.0/department_view.php");
+        exit();
 
 
 
-} while (false);
-
+    } while (false);
+}
 ?>
 
 <!DOCTYPE html>
@@ -132,76 +123,94 @@ do {
     ?>
     <br>
     <!-- get ID from employee and store ir -->
-    <form method="post">
-        <input type="hidden" name="id" value="<?php echo $id; ?>">
-        <!--Create different variables-->
-        <label>User ID</label>
-        <input type="text" class="form-control" name="user_id" value="<?php echo $user_id; ?>" disabled>
-        <br>
-        <label>Request date</label>
-        <input type="text" class="form-control" name="date_request" value="<?php echo $date_request; ?>" disabled>
-        <br>
-        <label>Item</label>
-        <input type="text" class="form-control" name="item" value="<?php echo $item; ?>" disabled>
-        <br>
-        <label>Room</label>
-        <input type="text" class="form-control" name="room" value="<?php echo $room; ?>" disabled>
-        <br>
-        <label>Problem category</label>
-        <input type="text" class="form-control" name="problem_category" value="<?php echo $problem_category; ?>"
-            disabled>
-        <br>
-        <label>Description</label>
-        <input type="text" class="form-control" name="description" value="<?php echo $description; ?>" disabled>
-        <br>
-        <label>Image</label>
-        <input type="text" class="form-control" name="image" value="<?php echo $image; ?>" disabled>
-        <br>
-        <label>Status*</label>
-        <select name="status">
-            <option value="Received" selected>Received</option>
-            <option value="Being processed">Being processed</option>
-            <option value="Implementing solution">Implementing solution</option>
-            <option value="Solved">Solved</option>
-        </select>
-        <br>
-        <label>Response message</label>
-        <input type="text" class="form-control" name="response_message" value="<?php echo $response_message; ?>">
-        <br>
-        <label>Solution category</label>
-        <input type="text" class="form-control" name="solution_category" value="<?php echo $solution_category; ?>">
-        <br>
-        <label>Expected SLA in days*</label>
-        <input type="text" class="form-control" name="expected_SLA_days" value="<?php echo $expected_SLA_days; ?>">
-        <br>
-        <label>Response date</label>
-        <input type="date" class="form-control" name="date_response" value="<?php echo $date_response; ?>" disabled>
-        <br>
-        <label>Fulfillment date</label>
-        <input type="date" class="form-control" name="date_fulfillment" value="<?php echo $date_fulfillment; ?>"
-            disabled>
-        <br>
-        <label>Actual SLA in days</label>
-        <input type="text" class="form-control" name="actual_SLA_days" value="<?php echo $actual_SLA_days; ?>" disabled>
-        <br>
-
-        <!-- check if success message is not empty, if is not, display success message-->
-        <?php
-        //if (!empty($successMessage)){
-        //  echo "
-        //<div class='alert alert-warning alert-dismissible fade show' role='alert'>
-        //  <strong>$successMessage</strong>
-        //</div>
-        //";
-        //}
-        ?>
-        <br>
-        <br>
-        <a href="/DAPPI 2.0/department_view.php">
-            <button type="submit" class="btn btn-primary" onclick="/DAPPI 2.0/department_view.php">Submit</button>
-        </a>
-        <a class="btn btn-outline-primary" href="/DAPPI 2.0/department_view.php" role="button">Cancel</a>
-    </form>
+    <table class="request">
+        <form method="post">
+            <input type="hidden" name="id" value="<?php echo $id; ?>">
+            <!--Create different variables-->
+            <tr>
+                <td><label>User ID</label></td>
+                <td><input type="text" class="form-control" name="user_id" value="<?php echo $user_id; ?>" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Request date</label></td>
+                <td><input type="text" class="form-control" name="date_request" value="<?php echo $date_request; ?>"
+                        disabled>
+                <td>
+            </tr>
+            <tr>
+                <td><label>Item</label></td>
+                <td><input type="text" class="form-control" name="item" value="<?php echo $item; ?>" disabled></td>
+            </tr>
+            <tr>
+                <td><label>Room</label>
+                <td><input type="text" class="form-control" name="room" value="<?php echo $room; ?>" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Problem category</label></td>
+                <td><input type="text" class="form-control" name="problem_category"
+                        value="<?php echo $problem_category; ?>" disabled></td>
+            </tr>
+            <tr>
+                <td><label>Description</label></td>
+                <td><input type="text" class="form-control" name="description" value="<?php echo $description; ?>"
+                        disabled></td>
+            </tr>
+            <tr>
+                <td><label>Status*</label></td>
+                <td>
+                    <?php $options = array("Received", "Being processed", "Implementing solution", "Solved");
+                    echo '<select name="status">';
+                    foreach ($options as $option) {
+                        $selected = ($option == $status) ? 'selected'
+                            : '';
+                        echo '<option value="' . $option . '" ' . $selected . '>' . $option . '</option>';
+                    }
+                    echo '</select>'; ?>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Response message</label></td>
+                <td><input type="text" class="form-control" name="response_message"
+                        value="<?php echo $response_message; ?>"></td>
+            </tr>
+            <tr>
+                <td><label>Solution</label></td>
+                <td><input type="text" class="form-control" name="solution" value="<?php echo $solution; ?>"></td>
+            <tr>
+            </tr>
+            <tr>
+                <td><label>Expected SLA in days*</label></td>
+                <td><input type="number" class="form-control" name="expected_SLA_days"
+                        value="<?php echo $expected_SLA_days; ?>"></td>
+            </tr>
+            <tr>
+                <td><label>Response date</label></td>
+                <td><input type="text" class="form-control" name="date_response" value="<?php echo $current_date; ?>"
+                        disabled></td>
+            </tr>
+        </form>
+    </table>
+    <br>
+    <a href="/DAPPI 2.0/department_view.php">
+        <button type="submit" id="log" style="margin: 30px;" class=" btn btn-primary"
+            onclick="/DAPPI 2.0/department_view.php" action="/DAPPI 2.0/department_view.php">Submit</button>
+    </a>
+    <a id="cancel" style="margin: 30px;" class="btn btn-outline-primary" href="/DAPPI 2.0/department_view.php"
+        role="button">Cancel</a>
+    <br>
+    <br>
+    <!-- check if success message is not empty, if is not, display success message-->
+    <?php
+    if (!empty($successMessage)) {
+        echo "
+        <div class='alert' role='alert'>
+          <strong>$successMessage</strong>
+        </div>
+        ";
+    }
+    ?>
 </body>
 
 </html>

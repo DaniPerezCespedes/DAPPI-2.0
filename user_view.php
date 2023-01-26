@@ -26,14 +26,11 @@
                 <th>Room</th>
                 <th>Problem category</th>
                 <th>Description</th>
-                <th>Image</th>
                 <th>Status</th>
                 <th>Response message</th>
-                <th>Solution category</th>
+                <th>Solution</th>
                 <th>Expected SLA (Days)</th>
                 <th>Date of response</th>
-                <th>Date of fulfillment</th>
-                <th>Actual SLA (Days)</th>
             </tr>
         </thead>
 
@@ -77,14 +74,11 @@
                 <td>$row[room]</td>
                 <td>$row[problem_category]</td>
                 <td>$row[description]</td>
-                <td>$row[image]</td>
                 <td>$row[status]</td>
                 <td>$row[response_message]</td>
-                <td>$row[solution_category]</td>
+                <td>$row[solution]</td>
                 <td>$row[expected_SLA_days]</td>
                 <td>$row[date_response]</td>
-                <td>$row[date_fulfillment]</td>
-                <td>$row[actual_SLA_days]</td>
                 </tr>";
             }
             ?>
