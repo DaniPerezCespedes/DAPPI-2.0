@@ -61,6 +61,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     <img src="Logo DAPPI.JPG" alt="logo" width="100" height="50" style="float: right" margin-right="50" />
     <h1>Solutions for managing Assets and Supplies</h1>
     <br>
+    <section class="info">
     <p>DAPPI is a ticketing system that will allow you to do the following: <br>
     <ul>
         <li>Report issues in an fast and easy way</li>
@@ -70,11 +71,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         <li>Generation of database for future analysis </li>
     </ul>
     </p>
-    <p><a href="https://docs.google.com/presentation/d/1zPqIvt_HKnMoKB0DvZh4wnbXhgShyC4FXL8vkAJ0fzI/edit#slide=id.p">Go
-            to Presentation</a>
-    </p>
-    <br>
-    <br>
+    </section>
+    <aside class="login">
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <label for="username">Username:</label>
         <input type="text" name="username" id="username" required>
@@ -88,6 +86,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         <br><br>
         <a href="#">Forgot Password</a>
     </form>
+    </aside>
 </body>
 
 </html>

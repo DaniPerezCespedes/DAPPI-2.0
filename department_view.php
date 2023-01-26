@@ -71,7 +71,8 @@
                 <td>$row[expected_SLA_days]</td>
                 <td>$row[date_response]</td>
                 <td>
-                <a class ='btn btn-primary btn-sm' href='/DAPPI 2.0/edit.php?id=$row[id]'>Edit</a>
+                <a class ='btn btn-primary' href='/DAPPI 2.0/edit.php?id=$row[id]'>
+                <button type='submit' class = 'btn btn-primary' id='edit'>Edit</button>
                 </td>
                 </tr>";
             }
