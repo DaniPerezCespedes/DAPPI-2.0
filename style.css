@@ -141,7 +141,7 @@ thead{
 } 
 header {
     padding: 5px;
-    background-color:  #ff9900ff;
+    background-color:  rgba(255, 153, 0, 0.705);
 }
 
 .table2{
