@@ -66,34 +66,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $status = $_POST["status"];
+    $response_message = $_POST["response_message"];
+    $solution = $_POST["solution"];
+    $expected_SLA_days = $_POST["expected_SLA_days"];
+
     do {
         //check if there are no empy fields
         if (empty($status) || empty($expected_SLA_days)) {
             $errorMessage = "Please fill all fields required";
             break;
         }
-
         $current_date = date("Y-m-d H:i:s");
-
+        /*$sql2 = "INSERT INTO requests (user_id, item, room, problem_category, description)
+        VALUES ($_SESSION[id], '$item','$room','$problem','$description') WHERE id= $id";*/
         $sql = "UPDATE requests  
-    SET status ='$status', response_message='$response_message',solution ='$solution',expected_SLA_days='$expected_SLA_days',date_response='$current_date'
-    WHERE id= $id";
+        SET status ='$status', response_message='$response_message',solution ='$solution',expected_SLA_days='$expected_SLA_days',date_response='$current_date'
+        WHERE id= $id";
         $result = $connection->query($sql);
-
         //check if query is correct or not
-
         if (!$result) {
             $errorMessage = "Invalid query: " . $connection->error;
             break; //break the while loop
         }
-
         $successMessage = "Request edited successfully";
         //redirect user to main page
         header("location:/DAPPI 2.0/department_view.php");
         exit();
-
-
-
     } while (false);
 }
 ?>
@@ -137,14 +136,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <td><label>Request date</label></td>
                 <td><input type="text" class="form-control" name="date_request" value="<?php echo $date_request; ?>"
                         disabled>
-                <td>
+                </td>
             </tr>
             <tr>
                 <td><label>Item</label></td>
                 <td><input type="text" class="form-control" name="item" value="<?php echo $item; ?>" disabled></td>
             </tr>
             <tr>
-                <td><label>Room</label>
+                <td><label>Room</label></td>
                 <td><input type="text" class="form-control" name="room" value="<?php echo $room; ?>" disabled>
                 </td>
             </tr>
@@ -179,7 +178,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <tr>
                 <td><label>Solution</label></td>
                 <td><input type="text" class="form-control" name="solution" value="<?php echo $solution; ?>"></td>
-            <tr>
             </tr>
             <tr>
                 <td><label>Expected SLA in days*</label></td>
@@ -191,15 +189,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <td><input type="text" class="form-control" name="date_response" value="<?php echo $current_date; ?>"
                         disabled></td>
             </tr>
+            <tr>
+                <td>
+                    <a href="/DAPPI 2.0/department_view.php">
+                        <button type="submit" id="log" style="margin: 30px;"
+                            class=" btn btn-primary">Submit</button></a>
+                </td>
+                <td><a id="cancel" style="margin: 30px;" class="btn btn-outline-primary"
+                        href="/DAPPI 2.0/department_view.php" role="button">Cancel</a></td>
+            </tr>
         </form>
     </table>
     <br>
-    <a href="/DAPPI 2.0/department_view.php">
-        <button type="submit" id="log" style="margin: 30px;" class=" btn btn-primary"
-            onclick="/DAPPI 2.0/department_view.php" action="/DAPPI 2.0/department_view.php">Submit</button>
-    </a>
-    <a id="cancel" style="margin: 30px;" class="btn btn-outline-primary" href="/DAPPI 2.0/department_view.php"
-        role="button">Cancel</a>
+
+
+
     <br>
     <br>
     <!-- check if success message is not empty, if is not, display success message-->
