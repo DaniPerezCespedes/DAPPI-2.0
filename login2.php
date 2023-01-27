@@ -56,17 +56,24 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <header>
-<table class=table2>
-    <tr>
-        <td style="width:20%"><a class ='btn btn-primary' href=#><button type='submit' class = 'btn btn-primary' id='login_button'>About us</button></a></td>
-        <td style="width:20%"><a class ='btn btn-primary' href=#><button type='submit' class = 'btn btn-primary' id='login_button'>Terms and coditions</button></a></td>
-        <td style="width:20%"><a class ='btn btn-primary' href=#><button type='submit' class = 'btn btn-primary' id='login_button'>Support</button></a></td>
-        <td style="width:20%"><a class ='btn btn-primary' href=#><button type='submit' class = 'btn btn-primary' id='login_button'>Contact</button></a></td>
-        <td style="width:20%"><a class ='btn btn-primary' href=#><button type='submit' class = 'btn btn-primary' id='login_button'>Social Media</button></a></td>
-        <td style="width:20%"><img src="Logo DAPPI 2.PNG" alt="logo" width="100" height="50" style="float: right"/></td>
-    </tr>
+    <table class=table2>
+        <tr>
+            <td style="width:20%"><a class='btn btn-primary' href=#><button type='submit' class='btn btn-primary'
+                        id='login_button'>About us</button></a></td>
+            <td style="width:20%"><a class='btn btn-primary' href=#><button type='submit' class='btn btn-primary'
+                        id='login_button'>Terms and coditions</button></a></td>
+            <td style="width:20%"><a class='btn btn-primary' href=#><button type='submit' class='btn btn-primary'
+                        id='login_button'>Support</button></a></td>
+            <td style="width:20%"><a class='btn btn-primary' href=#><button type='submit' class='btn btn-primary'
+                        id='login_button'>Contact</button></a></td>
+            <td style="width:20%"><a class='btn btn-primary' href=#><button type='submit' class='btn btn-primary'
+                        id='login_button'>Social Media</button></a></td>
+            <td style="width:20%"><img src="Logo DAPPI 2.PNG" alt="logo" width="100" height="50" style="float: right" />
+            </td>
+        </tr>
     </table>
 </header>
+
 <body>
     <br>
     <h1>Solutions for Managing Assets and Supplies</h1>
@@ -91,46 +98,47 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     <table>
         <tr>
             <td>
-            <img src="DAPPI diagram.JPG" alt="logo" width="680" height="350" style="float: left"/>  
-    </td>
-    <td>
-    <table class="login">
-    <tr>
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <td><label for="username">Username:</label></td>
-        <td><input type="text" name="username" id="username" required></td>
+                <img src="DAPPI diagram.JPG" alt="logo" width="680" height="350" style="float: left" />
+            </td>
+            <td>
+                <table class="login">
+                    <tr>
+                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                            <td><label for="username">Username:</label></td>
+                            <td><input type="text" name="username" id="username" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Password:</label></td>
+                        <td><input type="password" name="password" id="password" required></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Login" id="log2"></td>
+                        <td><input type="checkbox" id="check"><span>Remember me</span></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Forgot Password</a></td>
+                    </tr>
+                    </form>
+            </td>
         </tr>
-        <tr>
-        <td><label for="password">Password:</label></td>
-        <td><input type="password" name="password" id="password" required></td>
-        </tr>
-        <tr>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-        </tr>
-        <tr>
-        <td><input type="submit" value="Login" id="log2"></td>
-        <td><input type="checkbox" id="check"><span>Remember me</span></td>
-        </tr>
-        <tr>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-        </tr>
-        <tr>
-        <td><a href="#">Forgot Password</a></td>
-        </tr>
-    </form>
-</td>
-</tr>
-</table>
-<br>
-<br>
+    </table>
+    <br>
+    <br>
 </body>
+
 </html>
