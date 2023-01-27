@@ -13,7 +13,7 @@ body
         margin: left;  
         margin: 20 0 0 20px;  
         padding: 20px;  
-        background: #23463f;  
+        background: #2c6156;  
         border-radius: 15px ;  
           
 }  
@@ -108,7 +108,7 @@ span{
 }  
 a{  
     float: left;
-    color: #ff9900ff;   
+    color: white;   
 }  
 
 /* para tabla */
@@ -137,6 +137,23 @@ thead{
     background: rgba(253, 146, 146, 0.363);  
     border-radius: 5px ;  
     color: rgb(160, 25, 25);
-    font-weight: bold;
-      
+    font-weight: bold;    
 } 
+header {
+    padding: 5px;
+    background-color:  #ff9900ff;
+}
+
+.table2{
+width: 100% ;
+}
+#login_button{  
+    width: 150px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 5px;  
+    padding-left: 5px; 
+    background: #009668;
+    color:white;
+    font-weight: bold;
+  } 

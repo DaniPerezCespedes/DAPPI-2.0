@@ -55,45 +55,43 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     <title>DAPPI</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
-
+<header>
+<table class=table2>
+    <tr>
+        <td style="width:20%"><a class ='btn btn-primary' href=#><button type='submit' class = 'btn btn-primary' id='login_button'>About us</button></a></td>
+        <td style="width:20%"><a class ='btn btn-primary' href=#><button type='submit' class = 'btn btn-primary' id='login_button'>Terms and coditions</button></a></td>
+        <td style="width:20%"><a class ='btn btn-primary' href=#><button type='submit' class = 'btn btn-primary' id='login_button'>Support</button></a></td>
+        <td style="width:20%"><a class ='btn btn-primary' href=#><button type='submit' class = 'btn btn-primary' id='login_button'>Contact</button></a></td>
+        <td style="width:20%"><a class ='btn btn-primary' href=#><button type='submit' class = 'btn btn-primary' id='login_button'>Social Media</button></a></td>
+        <td style="width:20%"><img src="Logo DAPPI 2.PNG" alt="logo" width="100" height="50" style="float: right"/></td>
+    </tr>
+    </table>
+</header>
 <body>
     <br>
-    <img src="Logo DAPPI 2.PNG" alt="logo" width="100" height="50" style="float: right" margin-right="50" />
     <h1>Solutions for Managing Assets and Supplies</h1>
+    <!--
     <h4>
     <table>
     <tr>
         <td><a href="#">About us</a></td>
         <td></td>
         <td><a href="#">Terms and coditions</a></td>
-        <td></td>
         <td><a href="#">Support</a></td>
         <td></td>
         <td><a href="#">Contact</a></td>
-        <td></td>
-        <td><a href="#">Carriers</a></td>
         <td></td>
         <td><a href="#">Social Media</a></td>
         <td></td>
     </tr>
     </table>
     </h4>
+-->
     <br>
     <table>
         <tr>
             <td>
-            <img src="DAPPI diagram.JPG" alt="logo" width="680" height="350" style="float: left" margin-right="200" />  
-                <!--
-    <p>DAPPI is a ticketing system that will allow you to do the following: <br>
-    <ul>
-        <li>Report issues in an fast and easy way</li>
-        <li>Obtain standardized information from the problems reported</li>
-        <li>Facilitate communication between requester and responsible department </li>
-        <li>Request follow up in real time </li>
-        <li>Generation of database for future analysis </li>
-    </ul>
-    </p>
-    -->
+            <img src="DAPPI diagram.JPG" alt="logo" width="680" height="350" style="float: left"/>  
     </td>
     <td>
     <table class="login">
