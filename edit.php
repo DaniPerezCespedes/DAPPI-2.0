@@ -104,11 +104,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit employee</title>
+    <title>Edit request</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
 <body>
+<img src="Logo DAPPI.JPG" alt="logo" width="100" height="50" style="float: right" margin-right="50" />
     <h2>Edit Request</h2>
     <?php
     //check if error message is not empy. If not empty, show error message

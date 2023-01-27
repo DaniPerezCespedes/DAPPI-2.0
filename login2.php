@@ -37,11 +37,11 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             header("Location: user_view.php");
             exit();
         } else {
-            echo "Invalid user type.";
+            echo "Invalid user type";
         }
     } else {
         // Display an error message
-        echo "Invalid username or password.";
+        echo "<div class='alert' role='alert'>Invalid username or password</div>";
     }
     // Close the connection
     mysqli_close($con);
@@ -58,9 +58,32 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
 <body>
     <br>
-    <img src="Logo DAPPI.JPG" alt="logo" width="100" height="50" style="float: right" margin-right="50" />
+    <img src="Logo DAPPI 2.PNG" alt="logo" width="100" height="50" style="float: right" margin-right="50" />
     <h1>Solutions for Managing Assets and Supplies</h1>
+    <h4>
+    <table>
+    <tr>
+        <td><a href="#">About us</a></td>
+        <td></td>
+        <td><a href="#">Terms and coditions</a></td>
+        <td></td>
+        <td><a href="#">Support</a></td>
+        <td></td>
+        <td><a href="#">Contact</a></td>
+        <td></td>
+        <td><a href="#">Carriers</a></td>
+        <td></td>
+        <td><a href="#">Social Media</a></td>
+        <td></td>
+    </tr>
+    </table>
+    </h4>
     <br>
+    <table>
+        <tr>
+            <td>
+            <img src="DAPPI diagram.JPG" alt="logo" width="680" height="350" style="float: left" margin-right="200" />  
+                <!--
     <p>DAPPI is a ticketing system that will allow you to do the following: <br>
     <ul>
         <li>Report issues in an fast and easy way</li>
@@ -70,24 +93,46 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         <li>Generation of database for future analysis </li>
     </ul>
     </p>
-    <p><a href="https://docs.google.com/presentation/d/1zPqIvt_HKnMoKB0DvZh4wnbXhgShyC4FXL8vkAJ0fzI/edit#slide=id.p">Go
-            to Presentation</a>
-    </p>
-    <br>
-    <br>
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" required>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" required>
-        <br>
-        <input type="submit" value="Login">
-        <input type="checkbox" id="check">
-        <span>Remember me</span>
-        <br><br>
-        <a href="#">Forgot Password</a>
+    -->
+    </td>
+    <td>
+    <table class="login">
+    <tr>
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <td><label for="username">Username:</label></td>
+        <td><input type="text" name="username" id="username" required></td>
+        </tr>
+        <tr>
+        <td><label for="password">Password:</label></td>
+        <td><input type="password" name="password" id="password" required></td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+        <td><input type="submit" value="Login" id="log2"></td>
+        <td><input type="checkbox" id="check"><span>Remember me</span></td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+        <td><a href="#">Forgot Password</a></td>
+        </tr>
     </form>
+</td>
+</tr>
+</table>
+<br>
+<br>
 </body>
-
 </html>

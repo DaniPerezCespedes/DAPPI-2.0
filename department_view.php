@@ -10,9 +10,7 @@
 </head>
 
 <body>
-    <h1>Requests</h1>
-    <br>
-    <br>
+<img src="Logo DAPPI.JPG" alt="logo" width="100" height="50" style="float: right" margin-right="50" />
     <h2>List of Requests</h2>
     <table class="table">
         <thead>
@@ -71,7 +69,8 @@
                 <td>$row[expected_SLA_days]</td>
                 <td>$row[date_response]</td>
                 <td>
-                <a class ='btn btn-primary btn-sm' href='/DAPPI 2.0/edit.php?id=$row[id]'>Edit</a>
+                <a class ='btn btn-primary' href='/DAPPI 2.0/edit.php?id=$row[id]'>
+                <button type='submit' class = 'btn btn-primary' id='edit'>Edit</button>
                 </td>
                 </tr>";
             }
