@@ -137,25 +137,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </td>
 
             <tr>
+                <td><button type="submit" class="btn btn-primary" id="log">Submit</button></td>
                 <td>
-                <td><br><button type="submit" class="btn btn-primary" id="log">Submit</button></br></td>
+                    <a id="cancel" style="margin: 30px;" class="btn btn-outline-primary" href="/DAPPI 2.0/user_view.php"
+                        role="button">Cancel</a>
                 </td>
-    </table>
-    <!-- check if success message is not empty, if is not, display success message-->
-    <?php
-    if (!empty($successMessage)) {
-        echo "<div class='alert' role='alert'>
+
+                <!-- check if success message is not empty, if is not, display success message-->
+                <?php
+                if (!empty($successMessage)) {
+                    echo "<div class='alert' role='alert'>
             <strong>$successMessage</strong>
         </div>
         ";
-    }
-    ?>
-    <br>
-    <br>
-    <br>
-    <a id="cancel" style="margin: 30px;" class="btn btn-outline-primary" href="/DAPPI 2.0/user_view.php"
-        role="button">Cancel</a>
-    </form>
+                }
+                ?>
+        </form>
+    </table>
 </body>
 
 </html>
